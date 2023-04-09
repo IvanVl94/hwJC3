@@ -1,0 +1,36 @@
+public abstract class Transport implements Diagnostable{
+    public String modelName;
+    public int wheelsCount;
+
+    public Transport(String modelName, int wheelsCount) {
+        this.modelName = modelName;
+        this.wheelsCount = wheelsCount;
+    }
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    public int getWheelsCount() {
+        return wheelsCount;
+    }
+
+    public void setWheelsCount(int wheelsCount) {
+        this.wheelsCount = wheelsCount;
+    }
+    private void updateTyre() {
+        for (int i = 0; i < wheelsCount; i++) {
+            System.out.println("Меняем покрышку");
+        }
+    }
+    @Override
+    public void service(){
+        System.out.println("Обслуживаем " + modelName);
+        updateTyre();
+    }
+
+}
